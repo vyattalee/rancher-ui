@@ -23,6 +23,10 @@
         <div class="pod-info-item"><i class="icon icon-link"></i> {{format-ip model.displayIp}}</div>
       {{/if}}
 
+      {{#if model.displayName}}
+        <div class="pod-info-item"><i class="icon icon-link"></i> {{format-ip model.displayName}}</div>
+      {{/if}}
+
       {{#if model.dockerEngineVersion}}
         <div class="pod-info-item"><i class="icon icon-docker"></i> {{model.dockerEngineVersion}}
         </div>
@@ -33,6 +37,15 @@
         <div class="pod-info-item clip"><i class="icon icon-linux"></i> {{model.osBlurb}}{{#if model.kernelBlurb}} ({{model.kernelBlurb}}) {{/if}}</div>
       {{/if}}
     </div>
+    
+    <!--lijie add for test-->
+    <div class="pod-info-container">
+      {{#if model.localStorageBlurb}}
+        <div class="pod-info-item clip"><i class="icon icon-hdd"></i> {{model.localStorageBlurb}}{{#if model.localStorageBlurb}} ({{model.localStorageBlurb}}) {{/if}}</div>
+      {{/if}}
+
+    </div> 
+
     <div class="pod-info-container">
       {{#if model.cpuBlurb}}
         <div class="pod-info-item"><i class="icon icon-cpu" style="position: relative; top: -1px;"></i> {{model.cpuBlurb}}</div>

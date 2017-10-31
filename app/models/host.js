@@ -87,6 +87,7 @@ var Host = Resource.extend({
   displayIp: Ember.computed.alias('agentIpAddress'),
 
   displayName: function() {
+    //console.log(this.get('name')+ this.get('hostname') + '('+this.get('id')+')');
     return this.get('name') || this.get('hostname') || '('+this.get('id')+')';
   }.property('name','hostname','id'),
 
@@ -143,6 +144,7 @@ var Host = Resource.extend({
   }.property('info.osInfo.kernelVersion'),
 
   cpuBlurb: function() {
+    //console.log(this.get('info'));
     if ( this.get('info.cpuInfo.count') )
     {
       var ghz = Math.round(this.get('info.cpuInfo.mhz')/10)/100;
